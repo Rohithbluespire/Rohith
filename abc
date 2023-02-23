@@ -1,0 +1,51 @@
+pipeline {
+    agent none
+    parameters {
+        choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '')
+        booleanParam(name: 'executeTests', defaultValue: true, description: '')
+    }
+    stages {
+        stage('job1') {
+            steps {
+                script {
+                    echo "abc"
+                }
+            }
+        }
+        stage('job2') {
+            steps {
+                script {
+                    echo "def"
+                }
+            }
+        }
+        stage('build3') {
+            steps {
+                script {
+                    echo "def123"
+                }
+            }
+        }
+        stage('build4') {
+            steps {
+                script {
+                    echo "hddskk"
+                }
+            }
+        }
+        stage('test5') {
+            steps {
+                script {
+                    echo "Testing"
+                }
+            }
+        }
+        stage('deploy6') {
+            steps {
+                script {
+                    echo "xyz."
+                }
+            }
+        }
+    }
+}
